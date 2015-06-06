@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.app.Activity;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,22 +35,6 @@ public class listpage extends Activity {
         // Get ListView object from xml
         pListView = (ListView) findViewById(R.id.plist);
 
-
-        // Defined Array values to show in ListView
-       /* String[] listvalues = new String[] { "Tshirt",
-                "Iphone",
-                "calculator",
-                "TV",
-                "Laptop",
-                "Iphone",
-                "calculator",
-                "TV",
-                "Laptop",
-                "Iphone",
-                "calculator",
-                "TV",
-                "Laptop"
-        };*/
 
 
         for (int i=0;i<12;i++ )
@@ -79,8 +65,6 @@ public class listpage extends Activity {
         pListView.setAdapter(listadapter);
 
 
-     
-
 
 
         // ListView Item Click Listener
@@ -88,7 +72,34 @@ public class listpage extends Activity {
 
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                switch( position )
+
+                String itemValue = (String) pListView.getItemAtPosition(position);
+
+
+                Integer itemPosition=position;
+
+
+                setContentView(R.layout.prodpage);
+
+
+                Intent mIntent;
+                mIntent = new Intent(
+                        listpage.this,
+                        prodpage.class);
+                mIntent.putExtra("prodname",mp.get(position).get(0));
+                mIntent.putExtra("proddescription",mp.get(position).get(1));
+                mIntent.putExtra("sellername",mp.get(position).get(2));
+                mIntent.putExtra("prodimage",mp.get(position).get(3));
+                mIntent.putExtra("curbid",mp.get(position).get(4));
+                startActivity(mIntent);
+
+
+                // Show Alert
+               /* Toast.makeText(getApplicationContext(),
+                        "Position :" + itemPosition + "  ListItem : " + , Toast.LENGTH_LONG)
+                        .show();*/
+
+              /*  switch( position )
                 {
                     case 1:  EditText ert1= (EditText) findViewById(R.id.pname);
                         ert1.setText(mp.get(position).get(0));
@@ -131,26 +142,36 @@ public class listpage extends Activity {
                         break;
                     case 4:  Intent newActivity = new Intent(this, reservetickets.class);
                         startActivity(newActivity);
-                        break;*/
-                }
-            }
+                        break;
+            }*/
 
 
-
-                // ListView Clicked item index
-
-
-                // ListView Clicked item value
-                //String  itemValue    = (String) pListView.getItemAtPosition(position);
+        }
 
 
-                // Show Alert
-               /* Toast.makeText(getApplicationContext(),
-                        "Position :" + itemPosition + "  ListItem : " + itemValue, Toast.LENGTH_LONG)
-                        .show();*/
+    });
+    }
+    public void addnewitem(View view) {
 
 
-        });
+                Intent mIntent;
+                mIntent = new Intent(
+                        listpage.this,
+                        addproduct.class);
+                startActivity(mIntent);
+
+
     }
 
+    public void ClickLogout(View view) {
+
+
+        Intent mIntent;
+        mIntent = new Intent(
+                listpage.this,
+                MainPage.class);
+        startActivity(mIntent);
+
+
+    }
 }

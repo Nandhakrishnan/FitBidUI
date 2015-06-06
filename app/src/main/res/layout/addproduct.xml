@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainPage"
+    style="@style/Base.TextAppearance.AppCompat.Headline">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="vertical">
+
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView android:text="Product Name :    " android:layout_weight="1"/>
+                <EditText android:hint="Name" android:id="@+id/npname" android:layout_column="1" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="Product Description :    " android:layout_weight="1"/>
+                <EditText android:hint="Description" android:inputType="text" android:id="@+id/npdescription" />
+            </TableRow>
+
+
+            <TableRow>
+                <TextView android:text="Minimum Bid  :   " android:layout_weight="1"/>
+                <EditText android:hint="Bid amount" android:id="@+id/nbid"/>
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <Button android:text="Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/btadd"
+        android:onClick="ClickNewAdd"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+
+        <Button android:text="Back"  android:id="@+id/btback"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:onClick="clickBack"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
