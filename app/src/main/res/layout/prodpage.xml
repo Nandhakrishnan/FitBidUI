@@ -8,8 +8,9 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="vertical">
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
 
 
@@ -18,43 +19,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TableRow>
-                <TextView android:text="Product Name" android:layout_weight="1"/>
-                <EditText android:id="@+id/pname" android:text="Dummy"/>
+                <TextView android:text="Product Name :    " android:layout_weight="1"/>
+                <TextView android:id="@+id/pname" android:layout_column="1" />
             </TableRow>
 
             <TableRow>
-                <TextView android:text="Product Description" android:layout_weight="1"/>
-                <EditText android:inputType="text" android:id="@+id/pdescription" android:text="Dummy"/>
+                <TextView android:text="Product Description :    " android:layout_weight="1"/>
+                <TextView android:inputType="text" android:id="@+id/pdescription" />
             </TableRow>
 
             <TableRow>
-                <TextView android:text="Seller Name" android:layout_weight="1"/>
-                <EditText android:id="@+id/sname" android:text="Dummy"/>
+                <TextView android:text="Seller Name  :  " android:layout_weight="1"/>
+                <TextView android:id="@+id/sname" />
             </TableRow>
 
             <TableRow>
-                <TextView android:text="Product Image" android:layout_weight="1"/>
+                <TextView android:text="Product Image :  " android:layout_weight="1"/>
                 <ImageView android:id="@+id/pimage" android:src="@drawable/tshirt"/>
             </TableRow>
 
             <TableRow>
-                <TextView android:text="Current Bid" android:layout_weight="1"/>
-                <EditText android:id="@+id/cbid" android:text="Dummy"/>
+                <TextView android:text="Current Bid  :  " android:layout_weight="1"/>
+                <TextView android:id="@+id/cbid" />
             </TableRow>
 
             <TableRow>
-                <TextView android:text="Your Bid" android:layout_weight="1"/>
+                <TextView android:text="Your Bid  :   " android:layout_weight="1"/>
                 <EditText android:hint="Bid amount" android:id="@+id/ubid"/>
             </TableRow>
 
             <TableRow>
-                <Button android:text="Bid" android:layout_weight="1"/>
-
+                <TextView android:text="Time Remaining  :   " android:layout_weight="1"/>
+                <TextView android:id="@+id/timer"/>
             </TableRow>
+
+
 
         </TableLayout>
 
+
+
     </LinearLayout>
+
+    <Button android:text="Bid" android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btbid"
+        tools:ignore="UnknownId"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="wrap_content"
@@ -62,21 +76,13 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
-        <Button android:text="First" android:onClick="" android:id="@+id/btfirst"
+
+
+        <Button android:text="Back" android:onClick="clickprodBack" android:id="@+id/btback"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
 
-        <Button android:text="Back" android:onClick="loginValidate()" android:id="@+id/btback"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
 
-        <Button android:text="Next" android:onClick="loginValidate()" android:id="@+id/btnext"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
-
-        <Button android:text="Last" android:onClick="loginValidate()" android:id="@+id/btlast"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
 
     </LinearLayout>
 
