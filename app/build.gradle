@@ -21,5 +21,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.0',
+            "org.projectlombok:lombok:1.16.4",
+            "mysql:mysql-connector-java:5.1.6",
+            'com.sun.jersey.contribs:jersey-multipart:1.17.1',
+            'com.yammer.dropwizard:dropwizard-core:0.6.2'
 }

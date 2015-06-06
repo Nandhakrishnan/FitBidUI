@@ -5,7 +5,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.2.3',
+                  "org.projectlombok:lombok:1.16.4",
+                  "mysql:mysql-connector-java:5.1.6",
+                  'com.sun.jersey.contribs:jersey-multipart:1.17.1',
+                  'com.yammer.dropwizard:dropwizard-core:0.6.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
